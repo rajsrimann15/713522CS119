@@ -3,7 +3,7 @@ const errorHandler = require("./middleware/errorHandler");
 const app = express();
 
 
-const port = 5001;
+const port = 5002;
 
 app.use(express.json());
 app.use("/numbers", require("./routes/routes"));

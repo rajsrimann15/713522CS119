@@ -60,7 +60,8 @@ const fetchNumbersFromServer = async (type) => {
         if (error.response && error.response.status === 401) {
             console.log("Access token expired, refreshing token...");
             await getAccessToken();
-            return fetchNumbersFromServer(type);
+            return fetchNumbersFromServer(type); 
+        }
 
         console.error(`Error fetching ${type} numbers:`, error.message);
         return [];
