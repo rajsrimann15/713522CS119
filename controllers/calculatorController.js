@@ -3,8 +3,8 @@ const axios = require("axios");
 
 const WINDOW_SIZE = 10;
 let numberWindow = [];
-const BASE_URL = "http://20.244.56.144/test"; // Test server API
-const AUTH_URL = "http://20.244.56.144/test/auth"; // Authentication endpoint
+const BASE_URL = "http://20.244.56.144/test"; // test
+const AUTH_URL = "http://20.244.56.144/test/auth"; // Aut
 
 let accessToken = null; // Store access token
 
@@ -41,7 +41,7 @@ const getAccessToken = async () => {
 // Function to fetch numbers from the test server
 const fetchNumbersFromServer = async (type) => {
     if (!accessToken) {
-        await getAccessToken(); // Get a new token if not available
+        await getAccessToken(); 
         if (!accessToken) return [];
     }
 
@@ -60,8 +60,7 @@ const fetchNumbersFromServer = async (type) => {
         if (error.response && error.response.status === 401) {
             console.log("Access token expired, refreshing token...");
             await getAccessToken();
-            return fetchNumbersFromServer(type); // Retry with new token
-        }
+            return fetchNumbersFromServer(type);
 
         console.error(`Error fetching ${type} numbers:`, error.message);
         return [];
